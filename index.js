@@ -33,7 +33,7 @@ client.on('message', async message => {
 		// send a message to the channel the ping message was sent in.
 		bot.sendMessage(msg.channel, "pong!");
 
-		// alert the console
+		// alert the consolee
 		console.log("pong-ed " + msg.author.username);
 	}
 
