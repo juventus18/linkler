@@ -23,19 +23,19 @@ client.on('message', async message => {
 
 	// It's good practice to ignore other bots. This also makes your bot ignore itself
 	// and not get into a spam loop (we call that "botception").
-// 	if(message.author.bot) return;
-//
-// 	if (message.content.includes("http")) {
-// 		client.channels.get('thehangout-linkler').send(message.author.username + " linked: " + message.content);
-// 	}
+	// 	if(message.author.bot) return;
+	//
+	// 	if (message.content.includes("http")) {
+	// 		client.channels.get('thehangout-linkler').send(message.author.username + " linked: " + message.content);
+	// 	}
 
-if (msg.content.indexOf("ping") === 0) {
-	// send a message to the channel the ping message was sent in.
-	bot.sendMessage(msg.channel, "pong!");
+	if (msg.content.indexOf("ping") === 0) {
+		// send a message to the channel the ping message was sent in.
+		bot.sendMessage(msg.channel, "pong!");
 
-	// alert the console
-	console.log("pong-ed " + msg.author.username);
-}
+		// alert the console
+		console.log("pong-ed " + msg.author.username);
+	}
 
 }
 
@@ -177,17 +177,17 @@ if (msg.content.indexOf("ping") === 0) {
 
 // Clean command used by the eval above
 const clean = async text => {
-  if (text && text.constructor.name == "Promise")
-    text = await text;
-  if (typeof text !== "string")
-    text = require("util").inspect(text, {depth: 1});
+	if (text && text.constructor.name == "Promise")
+		text = await text;
+	if (typeof text !== "string")
+		text = require("util").inspect(text, { depth: 1 });
 
-  text = text
-    .replace(/`/g, "`" + String.fromCharCode(8203))
-    .replace(/@/g, "@" + String.fromCharCode(8203))
-    .replace(client.token, "mfa.VkO_2G4Qv3T--NO--lWetW_tjND--TOKEN--QFTm6YGtzq9PH--4U--tG0");
+	text = text
+		.replace(/`/g, "`" + String.fromCharCode(8203))
+		.replace(/@/g, "@" + String.fromCharCode(8203))
+		.replace(client.token, "mfa.VkO_2G4Qv3T--NO--lWetW_tjND--TOKEN--QFTm6YGtzq9PH--4U--tG0");
 
-  return text;
+	return text;
 }
 
 // The next line actually begins the bot's login. Usually you'd put the token here but in this case it's in the env file.
