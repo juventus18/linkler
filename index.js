@@ -26,7 +26,9 @@ client.on('message', async message => {
 	if (message.author.bot) return;
 
 	if (message.content.includes("http")) {
-		// send a message to the channel the ping message was sent in.
+		// react to the message so people know linkler did his job
+		message.react(":repeat:");
+		// send a message to the dupe channel
 		client.channels.cache.get('788937943891968021').send(message.member.user.username + " sent link: " + message.content);
 	}
 
