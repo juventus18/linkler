@@ -23,11 +23,19 @@ client.on('message', async message => {
 
 	// It's good practice to ignore other bots. This also makes your bot ignore itself
 	// and not get into a spam loop (we call that "botception").
-	if(message.author.bot) return;
+// 	if(message.author.bot) return;
+//
+// 	if (message.content.includes("http")) {
+// 		client.channels.get('thehangout-linkler').send(message.author.username + " linked: " + message.content);
+// 	}
 
-	if (message.content.includes("http")) {
-		client.channels.get('thehangout-linkler').send(message.author.username + " linked: " + message.content);
-	}
+if (msg.content.indexOf("ping") === 0) {
+	// send a message to the channel the ping message was sent in.
+	bot.sendMessage(msg.channel, "pong!");
+
+	// alert the console
+	console.log("pong-ed " + msg.author.username);
+}
 
 }
 
