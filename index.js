@@ -23,29 +23,22 @@ client.on('message', async message => {
 
 	// It's good practice to ignore other bots. This also makes your bot ignore itself
 	// and not get into a spam loop (we call that "botception").
-	// 	if(message.author.bot) return;
-	//
-	// 	if (message.content.includes("http")) {
-	// 		client.channels.get('thehangout-linkler').send(message.author.username + " linked: " + message.content);
-	// 	}
+	if (message.author.bot) return;
 
-	if (msg.content.indexOf("ping") === 0) {
+	if (message.content.includes("http")) {
 		// send a message to the channel the ping message was sent in.
-		bot.sendMessage(msg.channel, "pong!");
-
-		// alert the consolee
-		console.log("pong-ed " + msg.author.username);
+		client.channels.cache.get('788937943891968021').send(message.member.user.username + " sent link: " + message.content);
 	}
 
-}
+});
 
-// client.on("ready", () => {
-//   // This event will run if the bot starts, and logs in, successfully.
-//   console.log(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
-//   // Example of changing the bot's playing game to something useful. `client.user` is what the
-//   // docs refer to as the "ClientUser".
-//   client.user.setActivity(`Serving ${client.guilds.cache.size} servers`);
-// });
+client.on("ready", () => {
+	// This event will run if the bot starts, and logs in, successfully.
+	console.log(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
+	// Example of changing the bot's playing game to something useful. `client.user` is what the
+	// docs refer to as the "ClientUser".
+	client.user.setActivity(`Serving ${client.guilds.cache.size} servers`);
+});
 
 // client.on("guildCreate", guild => {
 //   // This event triggers when the bot joins a guild.
