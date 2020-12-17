@@ -27,7 +27,7 @@ client.on('message', async message => {
 
 	if (message.content.includes("http")) {
 		// react to the message so people know linkler did his job
-		message.react(":repeat:");
+		message.react("🔁");
 		// send a message to the dupe channel
 		client.channels.cache.get('788937943891968021').send(message.member.user.username + " sent link: " + message.content);
 	}
