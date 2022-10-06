@@ -1,5 +1,5 @@
-# Discord.js Bot Example
-Bluefox Example: Bot with argument parsing and multiple commands
+# Linkler Bot
+Takes links from one Discord channel and posts them in another Discord channel.
 
 ## Setup
 
@@ -9,7 +9,7 @@ Do the same for your User ID and the bot's desired prefix.
 Note that env files are not json or js files, do not put quotes or space anywhere.
 The equal sign defines the variable's value, so `PREFIX=+` , is like `const PREFIX = "+";`
 
-It should look like: 
+It should look like:
 
 ```
 DISCORD_TOKEN=MTg-this-IzNzU3OTA5NjA-is.not-DCeFB-a.real-r4DQlO-t0ken-qerT0
